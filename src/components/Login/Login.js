@@ -22,6 +22,7 @@ class Login extends Component {
   async login(e) {
     if (e) e.preventDefault();
     const { email, password } = this.state;
+    console.log(email, password)
     try {
       const res = await axios.post('/auth/login', { email, password });
       if (res.data.loggedIn) this.props.history.push('/my-budget');
